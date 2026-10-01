@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Rohan Navadiya — Web Developer &amp; Aspiring Full-Stack Developer
+    </title>
+    <meta
+      name="description"
+      content="Personal portfolio of Rohan Navadiya — a BCA student, web developer from Bhavnagar, Gujarat, passionate about building clean, responsive web applications."
+    />
+    <meta
+      name="keywords"
+      content="Rohan Navadiya, portfolio, web developer, BCA, React, Python, Bhavnagar, Gujarat"
+    />
+    <meta name="author" content="Rohan Navadiya" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Rohan Navadiya — Web Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="BCA student and web developer from Bhavnagar, Gujarat — passionate about building clean, responsive web applications."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://rohannavadiya.github.io/Portfolio"
+    />
+    <meta property="og:image" content="assets/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script
+      src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"
+      defer
+    ></script>
+
+    <!-- Three.js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+      defer
+    ></script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============ LOADING SCREEN ============ -->
+    <div id="loader" class="loader" aria-hidden="true">
+      <div class="loader__inner">
+        <div class="loader__ring"></div>
+        <span class="loader__text">RN</span>
+      </div>
+    </div>
+
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+    <canvas id="three-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav
+      id="navbar"
+      class="navbar"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="navbar__container">
+        <a href="#hero" class="navbar__logo" aria-label="Go to top">
+          <span class="navbar__logo-mark">Rohan.dev</span>
+        </a>
+
+        <ul class="navbar__links" id="nav-links">
+          <li><a href="#about" class="navbar__link">About</a></li>
+          <li><a href="#skills" class="navbar__link">Skills</a></li>
+          <li><a href="#projects" class="navbar__link">Projects</a></li>
+          <li><a href="#education" class="navbar__link">Education</a></li>
+          <li><a href="#contact" class="navbar__link">Contact</a></li>
+          <li>
+            <a
+              href="Rohan_Navadiya_Resume.pdf"
+              class="navbar__link navbar__link--resume"
+              download
+            >
+              <i data-lucide="download" class="icon-sm"></i>
+              Resume
+            </a>
+          </li>
+        </ul>
+
+        <button
+          class="navbar__toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ============ MOBILE MENU OVERLAY ============ -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button
+        class="mobile-menu__close"
+        id="mobile-close"
+        aria-label="Close menu"
+      >
+        <i data-lucide="x" class="icon-lg"></i>
+      </button>
+      <ul class="mobile-menu__links">
+        <li><a href="#about" class="mobile-menu__link">About</a></li>
+        <li><a href="#skills" class="mobile-menu__link">Skills</a></li>
+        <li><a href="#projects" class="mobile-menu__link">Projects</a></li>
+        <li><a href="#education" class="mobile-menu__link">Education</a></li>
+        <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+        <li>
+          <a
+            href="Rohan_Navadiya_Resume.pdf"
+            class="mobile-menu__link mobile-menu__link--resume"
+            download
+          >
+            <i data-lucide="download" class="icon-sm"></i>
+            Download Resume
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <div class="hero__overlay"></div>
+
+      <div class="hero__content">
+        <p class="hero__greeting reveal-up">Hello, I'm</p>
+        <h1 class="hero__name reveal-up">
+          <span class="hero__name-first">Rohan</span>
+          <span class="hero__name-last">Navadiya</span>
+        </h1>
+        <div class="hero__tagline-wrap reveal-up">
+          <span class="hero__tagline-prefix">I'm a&nbsp;</span>
+          <span class="hero__tagline" id="typewriter"></span>
+          <span class="hero__cursor" id="cursor">|</span>
+        </div>
+        <p class="hero__intro reveal-up">
+          A BCA student and web developer from Bhavnagar, Gujarat — passionate
+          about building clean, responsive web applications and growing into
+          full-stack development.
+        </p>
+
+        <div class="hero__cta reveal-up">
+          <a href="#projects" class="btn btn--primary">
+            <i data-lucide="folder-open" class="icon-sm"></i>
+            View Projects
+          </a>
+          <a href="Rohan_Navadiya_Resume.pdf" class="btn btn--outline" download>
+            <i data-lucide="download" class="icon-sm"></i>
+            Download Resume
+          </a>
+        </div>
+
+        <div class="hero__social reveal-up">
+          <a
+            href="https://in.linkedin.com/in/rohan-navadiya-3b4074360"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero__social-link"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/rohannavadiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero__social-link"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+          <a
+            href="mailto:workwithrohannavadiya@gmail.com"
+            class="hero__social-link"
+            aria-label="Email"
+          >
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+
+      <a
+        href="#about"
+        class="hero__scroll-hint"
+        aria-label="Scroll to about section"
+      >
+        <i data-lucide="chevrons-down"></i>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section__title reveal-up">
+          About <span class="text-accent">Me</span>
+        </h2>
+
+        <div class="about__grid">
+          <div class="about__text-col reveal-right">
+            <div class="about__text-card">
+              <p>
+                I'm a <strong>BCA student (2023–2026)</strong> at Shree
+                Swaminarayan College of Computer Science, Bhavnagar, maintaining
+                a CGPA of <strong>8.02/10</strong>. My journey in tech has been
+                hands-on from the start — through an apprenticeship and two
+                internships, I've built real-world applications including
+                management systems, e-commerce platforms, and booking systems.
+              </p>
+              <p>
+                Currently, I'm expanding my skillset by learning
+                <strong>Python</strong> and <strong>React</strong> to grow into
+                a full-stack developer. I love the process of turning ideas into
+                functional, well-designed web experiences.
+              </p>
+
+              <div class="about__details">
+                <div class="about__detail-item">
+                  <i data-lucide="map-pin" class="icon-sm text-accent"></i>
+                  <span>Bhavnagar, Gujarat, India</span>
+                </div>
+                <div class="about__detail-item">
+                  <i
+                    data-lucide="graduation-cap"
+                    class="icon-sm text-accent"
+                  ></i>
+                  <span>BCA — Shree Swaminarayan College</span>
+                </div>
+              </div>
+
+              <div class="about__languages">
+                <span class="about__lang-badge">
+                  <i data-lucide="globe" class="icon-xs"></i> English
+                </span>
+                <span class="about__lang-badge">
+                  <i data-lucide="globe" class="icon-xs"></i> Gujarati
+                </span>
+                <span class="about__lang-badge">
+                  <i data-lucide="globe" class="icon-xs"></i> Hindi
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section__title reveal-up">
+          My <span class="text-accent">Skills</span>
+        </h2>
+
+        <div class="skills__grid">
+          <!-- Languages -->
+          <div class="skills__card reveal-up" data-tilt>
+            <div class="skills__card-header">
+              <i data-lucide="code-2" class="skills__card-icon"></i>
+              <h3>Languages</h3>
+            </div>
+            <div class="skills__tags">
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag skill-tag--learning"
+                >Python <i data-lucide="loader" class="icon-xs"></i
+              ></span>
+            </div>
+          </div>
+
+          <!-- Web & Frameworks -->
+          <div class="skills__card reveal-up" data-tilt>
+            <div class="skills__card-header">
+              <i data-lucide="layout" class="skills__card-icon"></i>
+              <h3>Web &amp; Frameworks</h3>
+            </div>
+            <div class="skills__tags">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">.NET</span>
+              <span class="skill-tag skill-tag--learning"
+                >React <i data-lucide="loader" class="icon-xs"></i
+              ></span>
+            </div>
+          </div>
+
+          <!-- Databases -->
+          <div class="skills__card reveal-up" data-tilt>
+            <div class="skills__card-header">
+              <i data-lucide="database" class="skills__card-icon"></i>
+              <h3>Databases</h3>
+            </div>
+            <div class="skills__tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Oracle</span>
+              <span class="skill-tag">MS Access</span>
+            </div>
+          </div>
+
+          <!-- Tools & Platforms -->
+          <div class="skills__card reveal-up" data-tilt>
+            <div class="skills__card-header">
+              <i data-lucide="wrench" class="skills__card-icon"></i>
+              <h3>Tools &amp; Platforms</h3>
+            </div>
+            <div class="skills__tags">
+              <span class="skill-tag">VS Code</span>
+              <span class="skill-tag">Visual Studio</span>
+              <span class="skill-tag">XAMPP</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+            </div>
+          </div>
+
+          <!-- Concepts -->
+          <div class="skills__card reveal-up" data-tilt>
+            <div class="skills__card-header">
+              <i data-lucide="lightbulb" class="skills__card-icon"></i>
+              <h3>Concepts</h3>
+            </div>
+            <div class="skills__tags">
+              <span class="skill-tag">OOP</span>
+              <span class="skill-tag">DBMS</span>
+              <span class="skill-tag">SDLC</span>
+              <span class="skill-tag">Responsive UI Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section__title reveal-up">
+          Featured <span class="text-accent">Projects</span>
+        </h2>
+
+        <!-- Filter Tags -->
+        <div class="projects__filters reveal-up">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+          <button class="filter-btn" data-filter="internship">
+            Internship
+          </button>
+          <button class="filter-btn" data-filter="apprenticeship">
+            Apprenticeship
+          </button>
+          <button class="filter-btn" data-filter="personal">Personal</button>
+        </div>
+
+        <div class="projects__grid">
+          <!-- Project 1 -->
+          <article class="project-card" data-tilt data-tags="apprenticeship">
+            <div class="project-card__icon-wrap">
+              <i data-lucide="school" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">School Management System</h3>
+            <p class="project-card__desc">
+              A system to manage student records, attendance, and academic data
+              — built during apprenticeship.
+            </p>
+            <div class="project-card__meta">
+              <span class="project-card__date"
+                ><i data-lucide="calendar" class="icon-xs"></i> Jun–Sep
+                2024</span
+              >
+              <span class="project-card__org"
+                ><i data-lucide="building" class="icon-xs"></i> IT Expert
+                Academy</span
+              >
+            </div>
+            <div class="project-card__tags">
+              <span class="project-tag">Management System</span>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card" data-tilt data-tags="internship">
+            <div class="project-card__icon-wrap">
+              <i data-lucide="wallet" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">Expense Tracking System</h3>
+            <p class="project-card__desc">
+              Tracks personal/business expenses with categorization and
+              summaries — built during internship.
+            </p>
+            <div class="project-card__meta">
+              <span class="project-card__date"
+                ><i data-lucide="calendar" class="icon-xs"></i> Dec 2025–Feb
+                2026</span
+              >
+              <span class="project-card__org"
+                ><i data-lucide="building" class="icon-xs"></i> IT Hub Software
+                Solutions</span
+              >
+            </div>
+            <div class="project-card__tags">
+              <span class="project-tag">Web App</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/Internship/tree/main/Expense_tracker"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View Expense Tracking System on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card" data-tilt data-tags="internship">
+            <div class="project-card__icon-wrap">
+              <i data-lucide="car" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">Uber Booking System</h3>
+            <p class="project-card__desc">
+              A ride-booking web app simulating booking, fare estimation, and
+              trip flow — built during internship.
+            </p>
+            <div class="project-card__meta">
+              <span class="project-card__date"
+                ><i data-lucide="calendar" class="icon-xs"></i> Dec 2025–Feb
+                2026</span
+              >
+              <span class="project-card__org"
+                ><i data-lucide="building" class="icon-xs"></i> IT Hub Software
+                Solutions</span
+              >
+            </div>
+            <div class="project-card__tags">
+              <span class="project-tag">Web App</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/Internship/tree/main/Ubar%20booking%20system"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View Uber Booking System on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card" data-tilt data-tags="internship">
+            <div class="project-card__icon-wrap">
+              <i data-lucide="utensils" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">Online Food Ordering</h3>
+            <p class="project-card__desc">
+              A food ordering platform with menu browsing, cart, and checkout —
+              built during remote internship.
+            </p>
+            <div class="project-card__meta">
+              <span class="project-card__date"
+                ><i data-lucide="calendar" class="icon-xs"></i> Aug–Sep
+                2026</span
+              >
+              <span class="project-card__org"
+                ><i data-lucide="building" class="icon-xs"></i> Data Alcott
+                Systems</span
+              >
+            </div>
+            <div class="project-card__tags">
+              <span class="project-tag">Web App</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/Online-Food-Ordering"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View Online Food Ordering on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Project 5 -->
+          <article
+            class="project-card"
+            data-tilt
+            data-tags="ecommerce personal"
+          >
+            <div class="project-card__icon-wrap">
+              <i data-lucide="shirt" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">
+              StyleHub — Fashion &amp; Apparel
+            </h3>
+            <p class="project-card__desc">
+              A premium fashion e-commerce storefront with product listings,
+              cart, and checkout flow.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-tag">E-commerce</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/StyleHub---Fashion-Apparel"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View StyleHub on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Project 6 -->
+          <article
+            class="project-card"
+            data-tilt
+            data-tags="ecommerce personal"
+          >
+            <div class="project-card__icon-wrap">
+              <i data-lucide="cpu" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">
+              TechWorld — Electronics &amp; Gadgets
+            </h3>
+            <p class="project-card__desc">
+              An electronics storefront with category browsing, filters, and
+              cart/checkout.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-tag">E-commerce</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/TechWorld"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View TechWorld on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Project 7 -->
+          <article
+            class="project-card"
+            data-tilt
+            data-tags="ecommerce personal"
+          >
+            <div class="project-card__icon-wrap">
+              <i data-lucide="sofa" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">
+              HomeMart — Furniture &amp; Home Decor
+            </h3>
+            <p class="project-card__desc">
+              A home-decor storefront with categorized catalog, cart, and order
+              flow.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-tag">E-commerce</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/HomeMart"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View HomeMart on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+
+          <!-- Project 8 -->
+          <article
+            class="project-card"
+            data-tilt
+            data-tags="ecommerce personal"
+          >
+            <div class="project-card__icon-wrap">
+              <i data-lucide="book-open" class="project-card__icon"></i>
+            </div>
+            <h3 class="project-card__title">
+              BookNook — Books &amp; Stationery
+            </h3>
+            <p class="project-card__desc">
+              A bookstore-style site with category browsing, cart, and simulated
+              checkout.
+            </p>
+            <div class="project-card__tags">
+              <span class="project-tag">E-commerce</span>
+            </div>
+            <a
+              href="https://github.com/Rohannavadiya/BookNook"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-card__link"
+              aria-label="View BookNook on GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <path
+                  d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                />
+              </svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION & EXPERIENCE ============ -->
+    <section id="education" class="section education">
+      <div class="container">
+        <h2 class="section__title reveal-up">
+          Education &amp; <span class="text-accent">Experience</span>
+        </h2>
+
+        <div class="timeline">
+          <!-- Education -->
+          <div class="timeline__item">
+            <div class="timeline__marker">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__date">2023 – 2026</span>
+              <h3 class="timeline__title">
+                BCA — Bachelor of Computer Applications
+              </h3>
+              <p class="timeline__subtitle">
+                Shree Swaminarayan College of Computer Science, Bhavnagar
+              </p>
+              <p class="timeline__desc">CGPA: <strong>8.02/10</strong></p>
+              <span class="timeline__badge">Education</span>
+            </div>
+          </div>
+
+          <!-- Experience 1 -->
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__marker timeline__marker--work">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__date">Jun 2024 – Sep 2024</span>
+              <h3 class="timeline__title">
+                Junior Software Developer (Apprenticeship)
+              </h3>
+              <p class="timeline__subtitle">IT Expert Academy, Bhavnagar</p>
+              <p class="timeline__desc">
+                Built a School Management System handling student records,
+                attendance, and academic data.
+              </p>
+              <span class="timeline__badge timeline__badge--work"
+                >Apprenticeship</span
+              >
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="timeline__item">
+            <div class="timeline__marker timeline__marker--work">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__date">Dec 2025 – Feb 2026</span>
+              <h3 class="timeline__title">Web Developer Intern</h3>
+              <p class="timeline__subtitle">
+                IT Hub Software Solutions, Bhavnagar
+              </p>
+              <p class="timeline__desc">
+                Developed Expense Tracking System and Uber Booking System —
+                real-world web applications with database integration.
+              </p>
+              <span class="timeline__badge timeline__badge--work"
+                >Internship</span
+              >
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="timeline__item timeline__item--right">
+            <div class="timeline__marker timeline__marker--work">
+              <i data-lucide="briefcase"></i>
+            </div>
+            <div class="timeline__content">
+              <span class="timeline__date">Aug 2026 – Sep 2026</span>
+              <h3 class="timeline__title">Web Development Intern (Remote)</h3>
+              <p class="timeline__subtitle">Data Alcott Systems</p>
+              <p class="timeline__desc">
+                Built an Online Food Ordering platform with menu browsing, cart,
+                and checkout functionality.
+              </p>
+              <span class="timeline__badge timeline__badge--work"
+                >Internship</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="certifications reveal-up">
+          <h3 class="certifications__title">
+            <i data-lucide="award" class="icon-md text-accent"></i>
+            Certifications
+          </h3>
+          <div class="certifications__grid">
+            <div class="cert-card">
+              <i data-lucide="shield-check" class="cert-card__icon"></i>
+              <div>
+                <h4>Junior Software Developer</h4>
+                <p>Ministry of Skill Development — 2024</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="terminal" class="cert-card__icon"></i>
+              <div>
+                <h4>C/C++ Programming</h4>
+                <p>FLASH @ SSCCS — 2023</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="presentation" class="cert-card__icon"></i>
+              <div>
+                <h4>2nd Multidisciplinary International Conference</h4>
+                <p>2025</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="brain" class="cert-card__icon"></i>
+              <div>
+                <h4>Introduction to AI</h4>
+                <p>Google — 2026</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="zap" class="cert-card__icon"></i>
+              <div>
+                <h4>Maximize Productivity With AI Tools</h4>
+                <p>Google — 2026</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="trending-up" class="cert-card__icon"></i>
+              <div>
+                <h4>Stay Ahead of the AI Curve</h4>
+                <p>Google — 2026</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="award" class="cert-card__icon"></i>
+              <div>
+                <h4>Google AI Essentials</h4>
+                <p>Google — 2026</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="message-square" class="cert-card__icon"></i>
+              <div>
+                <h4>Discover the Art of Prompting</h4>
+                <p>Google — 2026</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <i data-lucide="shield" class="cert-card__icon"></i>
+              <div>
+                <h4>Use AI Responsibly</h4>
+                <p>Google — 2026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section__title reveal-up">
+          Get In <span class="text-accent">Touch</span>
+        </h2>
+
+        <div class="contact__grid">
+          <div class="contact__info reveal-left">
+            <p class="contact__intro">
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision. Feel free to reach out!
+            </p>
+
+            <div class="contact__details">
+              <a
+                href="mailto:workwithrohannavadiya@gmail.com"
+                class="contact__detail-item"
+              >
+                <div class="contact__detail-icon">
+                  <i data-lucide="mail"></i>
+                </div>
+                <div>
+                  <span class="contact__detail-label">Email</span>
+                  <span>workwithrohannavadiya@gmail.com</span>
+                </div>
+              </a>
+              <div class="contact__detail-item">
+                <div class="contact__detail-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div>
+                  <span class="contact__detail-label">Location</span>
+                  <span>Bhavnagar, Gujarat, India</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__socials">
+              <a
+                href="https://in.linkedin.com/in/rohan-navadiya-3b4074360"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact__social-btn"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/rohannavadiya"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact__social-btn"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact__form reveal-right" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="form-name" class="form-label">Name</label>
+              <div class="form-input-wrap">
+                <i data-lucide="user" class="form-input-icon"></i>
+                <input
+                  type="text"
+                  id="form-name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <span class="form-error" id="name-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="form-email" class="form-label">Email</label>
+              <div class="form-input-wrap">
+                <i data-lucide="at-sign" class="form-input-icon"></i>
+                <input
+                  type="email"
+                  id="form-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <span class="form-error" id="email-error"></span>
+            </div>
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message</label>
+              <div class="form-input-wrap form-input-wrap--textarea">
+                <i data-lucide="message-square" class="form-input-icon"></i>
+                <textarea
+                  id="form-message"
+                  name="message"
+                  class="form-input form-textarea"
+                  placeholder="Your message..."
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <span class="form-error" id="message-error"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <i data-lucide="send" class="icon-sm"></i>
+              Send Message
+            </button>
+            <div class="form-success" id="form-success">
+              <i data-lucide="check-circle" class="icon-sm"></i>
+              Message sent successfully! (Mailto fallback — wire up
+              Formspree/EmailJS for production)
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p class="footer__copy">
+          &copy; 2026 Rohan Navadiya. All rights reserved.
+        </p>
+        <div class="footer__socials">
+          <a
+            href="https://in.linkedin.com/in/rohan-navadiya-3b4074360"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.35V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/rohannavadiya"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.776.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.931 0-1.31.468-2.381 1.236-3.221-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 0 1 6.006 0c2.292-1.552 3.297-1.23 3.297-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.628-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.216.694.825.576C20.565 22.092 24 17.595 24 12.297c0-6.627-5.373-12-12-12"
+              />
+            </svg>
+          </a>
+          <a href="mailto:workwithrohannavadiya@gmail.com" aria-label="Email">
+            <i data-lucide="mail"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/three-bg.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
